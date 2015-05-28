@@ -1,8 +1,8 @@
 {
-  "name": "data-id",
+  "name": "data.blankon.id-weather",
   "version": "1.0.0",
   "description": "blankon data-id",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server",
     "test": "make test"
@@ -15,7 +15,6 @@
   "author": "Dhi Aurrahman <diorahman@rockybars.com>",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^8.5.2",
     "hyperquest": "^1.2.0",
     "joi": "^6.4.3",
     "lout": "^6.2.2"
