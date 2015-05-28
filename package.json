@@ -1,6 +1,6 @@
 {
   "name": "data.blankon.id-weather",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "blankon data-id",
   "main": "index.js",
   "scripts": {
