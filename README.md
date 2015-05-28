@@ -1,11 +1,9 @@
-## Cached
+## BlankOn data-id plugin for OpenWeatherMap.org
 
 ```
 $ npm install
 $ npm start
 ```
-
-Open `http://localhost:3000/docs`
 
 ## license 
 
