@@ -7,7 +7,7 @@ var qs = require('querystring');
 var plugin = {
   register: function(server, options, next) {
     function openweather(type, query, next) {
-      r = request(ROOT_URL + '/' + type + '?' + query);
+      var r = request(ROOT_URL + '/' + type + '?' + query);
       var data = '';
       r.on('data', function(chunk){
         data += chunk;
