@@ -13,8 +13,13 @@ var plugin = {
         data += chunk;
       });
       r.on('end', function(){
-        // todo handle if not json
-        next(null, JSON.parse(data));
+        var obj = {};
+        try {
+          obj = JSON.parse(data);
+        } catch (ex) {
+          return next(ex);
+        }
+        next(null, obj);
       });
       r.on('error', next);
     }
@@ -28,7 +33,7 @@ var plugin = {
       path: '/weather/current',
       config: {
         handler: function(req, res) {
-          server.methods.openweather('current', qs.stringify(req.query), function(err, data) {
+          server.methods.openweather('weather', qs.stringify(req.query), function(err, data) {
             res(err || data);
           });
         },
