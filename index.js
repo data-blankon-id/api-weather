@@ -20,6 +20,9 @@ var Weather = function(server, options, next) {
       data += chunk;
     });
     r.on('end', function(){
+      if (query.indexOf("mode=xml")>=0) {
+        return next(null, data);
+      }
       var obj = {};
       try {
         obj = JSON.parse(data);
@@ -46,7 +49,11 @@ Weather.prototype.registerEndPoints = function() {
     config: {
       handler: function(req, res) {
         self.server.methods.openweather("weather", qs.stringify(req.query), function(err, data) {
-          res(err || data);
+          var type = "application/json";
+          if (req.query && req.query.mode == "xml") {
+            type = "text/xml";
+          }
+          res(err || data).type(type);
         });
       },
       query: self.query
@@ -58,7 +65,11 @@ Weather.prototype.registerEndPoints = function() {
     config: {
       handler: function(req, res) {
         self.server.methods.openweather("forecast", qs.stringify(req.query), function(err, data) {
-          res(err || data);
+          var type = "application/json";
+          if (req.query && req.query.mode == "xml") {
+            type = "text/xml";
+          }
+          res(err || data).type(type);
         });
       },
       query: self.query
