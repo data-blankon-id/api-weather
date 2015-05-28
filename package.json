@@ -9,14 +9,34 @@
   },
   "keywords": [
     "blankon",
+    "weather",
+    "openweather",
+    "openweathermap",
+    "forecast",
     "data",
     "data-id"
   ],
   "author": "Dhi Aurrahman <diorahman@rockybars.com>",
   "license": "MIT",
   "dependencies": {
+    "boom": "^2.7.2",
     "hyperquest": "^1.2.0",
-    "joi": "^6.4.3",
-    "lout": "^6.2.2"
-  }
+    "joi": "^6.4.3"
+  },
+  "devDependencies": {
+    "code": "^1.4.0",
+    "hapi": "^8.5.2",
+    "lab": "^5.9.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/data-blankon-id/api-weather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/data-blankon-id/api-weather/issues"
+  },
+  "homepage": "https://github.com/data-blankon-id/api-weather#readme"
 }
